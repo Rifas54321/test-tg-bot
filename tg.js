@@ -1,4 +1,4 @@
-cconst TelegramBot = require("node-telegram-bot-api");
+const TelegramBot = require("node-telegram-bot-api");
 const { Hercai } = require('hercai');
 const herc = new Hercai();
 const token = "6608460313:AAEtxzs2Bh2kb5f1aopKF_L98mGJBG8oOX4"
