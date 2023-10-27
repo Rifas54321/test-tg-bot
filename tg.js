@@ -1,6 +1,7 @@
 
 const TelegramBot = require("node-telegram-bot-api");
-
+const request = require("request");
+const url = "https://nice-cyan-fawn-wig.cyclic.app/"
 
 
 const { Hercai } = require('hercai');
@@ -11,6 +12,13 @@ bot.on("message",async (msg)=>{
   const chatId = msg.chat.id;
   const msgText = msg.text;
   console.log(msg.text);
+  request(url,(err,res,body)={
+    if (err){
+      console.log(err)
+    }else{
+      console.log(res.status)
+    }
+  })
   if (msgText === "/start"){
     bot.sendMessage(chatId,"Welcome to rfs ai")
   }else{
