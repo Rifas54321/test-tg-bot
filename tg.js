@@ -11,6 +11,7 @@ app.get("/",(req,res)=>{
 })
 app.get("*",(req,res)=>{
   req.write("not found")
+  req.end()
 })
 
 
