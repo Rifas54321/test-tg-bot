@@ -10,7 +10,7 @@ const { Hercai } = require('hercai');
 const herc = new Hercai();
 const token = "6608460313:AAEtxzs2Bh2kb5f1aopKF_L98mGJBG8oOX4"
 const bot = new TelegramBot(token,{polling:true})
-bot.on("message",async (msg)=>{
+bot.on("message",(msg)=>{
   const chatId = msg.chat.id;
   const msgText = msg.text;
   console.log(msg.text);
@@ -19,7 +19,7 @@ bot.on("message",async (msg)=>{
   if (msgText === "/start"){
     bot.sendMessage(chatId,"Welcome to rfs ai")
   }else{
-  await herc.question({model:"v2",content:msgText}).then(response => {
+   herc.question({model:"v2",content:msgText}).then(response => {
 bot.sendMessage(chatId,response.reply);
 
 });
