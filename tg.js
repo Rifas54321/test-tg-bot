@@ -1,5 +1,6 @@
 
 const TelegramBot = require("node-telegram-bot-api");
+const path = require("path")
 const express = require("express");
 const request = require("request");
 const url = "https://nice-cyan-fawn-wig.cyclic.app/"
@@ -14,6 +15,7 @@ bot.on("message",async (msg)=>{
   const msgText = msg.text;
   console.log(msg.text);
   app.get("/"(req,res)=>{
+    req.sendFile(path.join(__dirname,index.html))
   if (msgText === "/start"){
     bot.sendMessage(chatId,"Welcome to rfs ai")
   }else{
