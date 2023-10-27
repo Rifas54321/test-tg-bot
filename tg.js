@@ -14,7 +14,7 @@ bot.on("message",async (msg)=>{
   const chatId = msg.chat.id;
   const msgText = msg.text;
   console.log(msg.text);
-  app.get("/"(req,res)=>{
+  app.get("/",(req,res)=>{
     req.sendFile(path.join(__dirname,index.html))
   if (msgText === "/start"){
     bot.sendMessage(chatId,"Welcome to rfs ai")
