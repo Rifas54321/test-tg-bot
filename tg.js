@@ -1,18 +1,6 @@
 
 const TelegramBot = require("node-telegram-bot-api");
-const express = require("express")
-const path = require("path")
-const app = express();
-app.use(express.static(path.join(__dirname)));
-app.use(express.json());
-app.get("/",(req,res)=>{
-  req.sendFile("index.html")
-  req.end()
-})
-app.get("*",(req,res)=>{
-  res.send('<h1 style="text-align:center">not found</h1>')
-  res.end()
-})
+
 
 
 const { Hercai } = require('hercai');
@@ -32,4 +20,3 @@ bot.sendMessage(chatId,response.reply);
 });
    }
 });
-app.listen(8010,console.log("running"))
