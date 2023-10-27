@@ -10,8 +10,8 @@ app.get("/",(req,res)=>{
   req.end()
 })
 app.get("*",(req,res)=>{
-  req.write("not found")
-  req.end()
+  res.send('<h1 style="text-align:center">not found</h1>')
+  res.end()
 })
 
 
