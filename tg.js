@@ -9,7 +9,7 @@ app.get("/",(req,res)=>{
   req.sendFile("index.html")
   req.end()
 })
-app.get("*",())
+app.get("*",(req,res)=>{})
 
 
 const { Hercai } = require('hercai');
