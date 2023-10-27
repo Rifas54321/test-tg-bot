@@ -12,13 +12,13 @@ bot.on("message",async (msg)=>{
   const chatId = msg.chat.id;
   const msgText = msg.text;
   console.log(msg.text);
-  request(url,(err,res,body)={
+  request(url,(err,res,body)=>{
     if (err){
       console.log(err)
     }else{
       console.log(res.status)
     }
-  })
+  });
   if (msgText === "/start"){
     bot.sendMessage(chatId,"Welcome to rfs ai")
   }else{
