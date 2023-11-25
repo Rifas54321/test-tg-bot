@@ -21,20 +21,23 @@ bot.on("message",async(msg)=>{
 const message = `𝙃𝙞! @${msg.chat.username}
 𝙬𝙚𝙡𝙘𝙤𝙢𝙚 𝙩𝙤 𝙧𝙛𝙨𝘼𝙞`
      bot.sendMessage(chatId,message,m)
+  }else if(msg.text == "𝔸𝕓𝕠𝕦𝕥"){
+    bot.sendChatAction(chatId,"typing")
+    bot.sendMessage(chatId,"𝔹𝕠𝕥 𝕔𝕣𝕖𝕒𝕥𝕖𝕕 𝕓𝕪 @rifas11")
   }
 })
 bot.on("message",async(msg)=>{
   const chatId=msg.chat.id;
   if(msg.text=="/text"){
     bot.sendChatAction(chatId,"typing")
-    bot.sendMessage(chatId,"please complete the query")
+    bot.sendMessage(chatId,"𝙋𝙡𝙚𝙖𝙨𝙚 𝙘𝙤𝙢𝙥𝙡𝙚𝙩𝙚 𝙩𝙝𝙚 𝙦𝙪𝙚𝙧𝙮")
   }
 })
 bot.on("message",async(msg)=>{
   const chatId = msg.chat.id;
   if(msg.text=="/image"){
     bot.sendChatAction(chatId,"typing")
-    bot.sendMessage(chatId,"please complete the query")
+    bot.sendMessage(chatId,"𝙋𝙡𝙚𝙖𝙨𝙚 𝙘𝙤𝙢𝙥𝙡𝙚𝙩𝙚 𝙩𝙝𝙚 𝙦𝙪𝙚𝙧𝙮")
   }
 })
 bot.onText(/\/image(.+)/, async(msg, match) => {
