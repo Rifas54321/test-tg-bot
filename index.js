@@ -13,9 +13,14 @@ const hercai = new Hercai();
 bot.on("message",async(msg)=>{
   const chatId=msg.chat.id;
   if(msg.text=="/start"){
+  var m = {
+    reply_markup:{
+      keyboard:[[{text:"𝔸𝕓𝕠𝕦𝕥"}]]
+    }
+  }
 const message = `𝙃𝙞! @${msg.chat.username}
 𝙬𝙚𝙡𝙘𝙤𝙢𝙚 𝙩𝙤 𝙧𝙛𝙨𝘼𝙞`
-     bot.sendMessage(chatId,message)
+     bot.sendMessage(chatId,message,m)
   }
 })
 bot.on("message",async(msg)=>{
