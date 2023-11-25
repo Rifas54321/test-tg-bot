@@ -1,4 +1,9 @@
 const teleGram = require("node-telegram-bot-api");
+const express = require("express")
+const app = express();
+app.get("/",async(req,res)=>{
+  res.send('<h2 style="text-align:center;">running</h2>')
+})
 const {Hercai} = require("hercai");
 const bot_token ="6608460313:AAEtxzs2Bh2kb5f1aopKF_L98mGJBG8oOX4";
 const bot = new teleGram(bot_token,{polling:true})
@@ -14,12 +19,14 @@ welcome to rfsAi`
 bot.on("message",async(msg)=>{
   const chatId=msg.chat.id;
   if(msg.text=="/text"){
+    bot.sendChatAction(chatId,"typing")
     bot.sendMessage(chatId,"please complete the query")
   }
 })
 bot.on("message",async(msg)=>{
   const chatId = msg.chat.id;
   if(msg.text=="/image"){
+    bot.sendChatAction(chatId,"typing")
     bot.sendMessage(chatId,"please complete the query")
   }
 })
@@ -28,6 +35,7 @@ bot.onText(/\/image(.+)/, async(msg, match) => {
  const img_resp = match[1];  
  console.log("image : ",img_resp)
    hercai.drawImage({model:"v2",prompt:img_resp}).then(response => {
+  bot.sendChatAction(chatId,"typing")
    bot.sendPhoto(chatId,Photo=response.url)
  })
  });
@@ -37,9 +45,10 @@ bot.onText(/\/image(.+)/, async(msg, match) => {
  const text_resp = match[1];  
  console.log("text : ",text_resp)
 hercai.question({model:"v2",content:text_resp}).then(response => {
+  bot.sendChatAction(chatId,"typing")
   bot.sendMessage(chatId,response.reply)
 
 });
 
  });
-
+app.listen(3100,()=>{console.log("server started")})
