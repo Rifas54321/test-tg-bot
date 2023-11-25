@@ -58,8 +58,7 @@ hercai.question({model:"v2",content:text_resp}).then(response => {
 
 });
 }catch{
-  bot.sendChatAction(chatId,"sorry! error occured please try again
-  later")
+bot.sendChatAction(chatId,"sorry! error occured please try again later")
 }
 
  });
