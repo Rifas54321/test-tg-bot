@@ -41,10 +41,10 @@ bot.on("message",async(msg)=>{
   }
 })
 bot.onText(/\/image(.+)/, async(msg, match) => {
+try{
  const chatId = msg.chat.id;
  const img_resp = match[1];  
  console.log("image : ",img_resp)
- try{
    hercai.drawImage({model:"v2",prompt:img_resp}).then(response => {
   bot.sendChatAction(chatId,"typing")
    bot.sendPhoto(chatId,Photo=response.url)
@@ -56,10 +56,10 @@ bot.onText(/\/image(.+)/, async(msg, match) => {
  });
  
  bot.onText(/\/text(.+)/, async(msg, match) => {
+try{
  const chatId = msg.chat.id;
  const text_resp = match[1];  
  console.log("text : ",text_resp)
-try{
 hercai.question({model:"v2",content:text_resp}).then(response => {
   bot.sendChatAction(chatId,"typing")
   bot.sendMessage(chatId,response.reply)
