@@ -57,7 +57,7 @@ hercai.question({model:"v2",content:text_resp}).then(response => {
   bot.sendMessage(chatId,response.reply)
 
 });
-catch{
+}catch{
   bot.sendChatAction(chatId,"sorry! error occured please try again
   later")
 }
