@@ -1,7 +1,7 @@
 const teleGram = require("node-telegram-bot-api");
 const express = require("express")
 const app = express();
-app.use(expressurlencoded({extended:true}))
+app.use(express.urlencoded({extended:true}))
 app.use(express.json());
 app.get("/",async(req,res)=>{
   res.send('<h2 style="text-align:center;">running</h2>')
