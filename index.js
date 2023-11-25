@@ -51,7 +51,7 @@ bot.onText(/\/image(.+)/, async(msg, match) => {
  })
  }catch{
    bot.sendChatAction(chatId,"typing");
-   bot.sendMessage(chatId,"sorry! error occured please try again later")
+   bot.sendMessage(chatId,"𝙎𝙤𝙧𝙧𝙮! 𝙚𝙧𝙧𝙤𝙧 𝙤𝙘𝙘𝙪𝙧𝙚𝙙 𝙥𝙡𝙚𝙖𝙨𝙚 𝙩𝙧𝙮 𝙖𝙜𝙖𝙞𝙣 𝙡𝙖𝙩𝙚𝙧")
  }
  });
  
@@ -66,7 +66,7 @@ hercai.question({model:"v2",content:text_resp}).then(response => {
 
 });
 }catch{
-bot.sendChatAction(chatId,"sorry! error occured please try again later")
+bot.sendChatAction(chatId,"𝙎𝙤𝙧𝙧𝙮! 𝙚𝙧𝙧𝙤𝙧 𝙤𝙘𝙘𝙪𝙧𝙚𝙙 𝙥𝙡𝙚𝙖𝙨𝙚 𝙩𝙧𝙮 𝙖𝙜𝙖𝙞𝙣 𝙡𝙖𝙩𝙚𝙧")
 }
 
  });
